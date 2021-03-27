@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+server:
+  port: 4444
+  
+zuul:
+  prefix: /api
+  routes:
+    hi:
+      path: /hi/**
+      service-id: customer-service
+    hello:
+      path: /hello/**
+      service-id: account-service
+     
